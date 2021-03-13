@@ -8,7 +8,7 @@
 ```typescript
 import * as KatexStyle from 'nehan-katex';
 
-const style = AnchorStyle.create({
+const style = KatexStyle.create({
   selector: "math"
 });
 ```
