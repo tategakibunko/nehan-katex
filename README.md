@@ -16,7 +16,7 @@ const style = KatexStyle.create({
 ## use markup
 
 ```html
-<math class="inline">$sin$theta</math> is called "正弦" in Japanese.
+<math class="inline">$sin</math> is called "正弦" in Japanese.
 <math>$begin{pmatrix} a & b $$ c & d $end{pmatrix}</math>
 ```
 
