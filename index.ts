@@ -11,15 +11,27 @@ function normalizeDefault(markup: string): string {
     ;
 }
 
+function attachDefault(dom: HTMLDivElement) {
+  document.body.appendChild(dom);
+}
+
+function detachDefault(dom: HTMLDivElement) {
+  document.body.removeChild(dom);
+}
+
 export function create(args: {
   selector?: string;
   spacingSize?: number;
   margin?: string;
   normalize?: (markup: string) => string;
+  attachDOM?: (dom: HTMLElement) => void;
+  detachDOM?: (dom: HTMLElement) => void;
 }): CssStyleSheet {
   const selector = args.selector ?? "math";
   const spacingSize = args.spacingSize ?? 10;
   const normalize = args.normalize ?? normalizeDefault;
+  const attachDOM = args.attachDOM ?? attachDefault;
+  const detachDOM = args.detachDOM ?? detachDefault;
   return new CssStyleSheet({
     [selector]: {
       "fontSize": "0.8em",
@@ -51,10 +63,10 @@ export function create(args: {
         });
 
         // To get accurate dom size, we need to append $dom to document-tree temporarily.
-        document.body.appendChild($dom);
+        attachDOM($dom);
         const mathMeasure = isInline ? $dom.clientWidth : maxMeasure;
         const mathExtent = $dom.clientHeight;
-        document.body.removeChild($dom);
+        detachDOM($dom);
         $dom.style.visibility = "visible";
         ctx.setExternalDOM($dom);
 
