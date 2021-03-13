@@ -1,4 +1,4 @@
-# nehan-anchor
+# nehan-katex
 
 [nehan](https://github.com/tategakibunko/nehan) plugin for displaying mathematical expression using katex",
 
