@@ -1,0 +1,33 @@
+{
+  "name": "nehan-katex",
+  "version": "0.0.1",
+  "description": "nehan plugin for displaying mathematical expression using katex",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tategakibunko/nehan-katex.git"
+  },
+  "keywords": [
+    "nehan",
+    "plugin",
+    "katex",
+    "math"
+  ],
+  "author": "Watanabe Masaki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tategakibunko/nehan-katex/issues"
+  },
+  "homepage": "https://github.com/tategakibunko/nehan-katex#readme",
+  "dependencies": {
+    "katex": "^0.13.0",
+    "nehan": "^7.7.1"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.11.0",
+    "typescript": "^4.2.3"
+  }
+}
