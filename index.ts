@@ -1,4 +1,4 @@
-import { CssStyleSheet, DynamicStyleContext } from 'nehan';
+import { CssStyleSheet, DynamicStyleContext, LogicalCssEvaluator } from 'nehan';
 import * as katex from 'katex';
 
 // TODO: prevent '\$' from escaping, because it's used as 'dollar text'.
@@ -32,9 +32,10 @@ export function create(args: {
   const normalize = args.normalize ?? normalizeDefault;
   const attachDOM = args.attachDOM ?? attachDefault;
   const detachDOM = args.detachDOM ?? detachDefault;
+  const fontSize = "0.8em";
   return new CssStyleSheet({
     [selector]: {
-      "fontSize": "0.8em",
+      fontSize,
       "!render": (ctx: DynamicStyleContext) => {
         const pcont = ctx.parentContext;
         if (!pcont) {
@@ -48,6 +49,10 @@ export function create(args: {
         const markup = normalize(ctx.element.$node.textContent || "");
         const maxMeasure = pcont.maxMeasure - spacingSize * 2; // padding-start(10px) + padding-end(10px)
         const $dom = document.createElement("div");
+        const writingMode = pcont.env.writingMode;
+        const etor = new LogicalCssEvaluator(writingMode);
+        pcont.env.font.acceptCssEvaluator(etor).applyTo($dom.style);
+        $dom.style.fontSize = fontSize;
 
         if (isInline) {
           $dom.style.display = "inline-block";
