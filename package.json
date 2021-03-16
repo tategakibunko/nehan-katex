@@ -1,6 +1,6 @@
 {
   "name": "nehan-katex",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "nehan plugin for displaying mathematical expression using katex",
   "main": "dist/index.js",
   "scripts": {
