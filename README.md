@@ -6,6 +6,7 @@
 ## create nehan style.
 
 ```typescript
+import { PagedNehanDocument } from 'nehan';
 import * as KatexStyle from 'nehan-katex';
 
 const katexStyle = KatexStyle.create({
