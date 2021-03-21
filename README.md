@@ -8,8 +8,14 @@
 ```typescript
 import * as KatexStyle from 'nehan-katex';
 
-const style = KatexStyle.create({
+const katexStyle = KatexStyle.create({
   selector: "math"
+});
+
+const pd = new PagedNehanDocument("<math>$begin{pmatrix} a & b $$ c & d $end{pmatrix}</math>", {
+  styleSheets:[
+    katexStyle, // add katex style!
+  ]
 });
 ```
 
