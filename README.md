@@ -3,7 +3,7 @@
 [nehan](https://github.com/tategakibunko/nehan) plugin for displaying mathematical expression using katex",
 
 
-## create nehan style.
+## create nehan style
 
 ```typescript
 import { PagedNehanDocument, CssStyleSheet } from 'nehan';
@@ -18,6 +18,12 @@ const pd = new PagedNehanDocument("<math>$begin{pmatrix} a & b $$ c & d $end{pma
     katexStyle, // add katex style!
   ]
 });
+```
+
+## load katex css
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.0/katex.min.css">
 ```
 
 ## use markup
