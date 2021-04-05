@@ -2,6 +2,7 @@
 
 [nehan](https://github.com/tategakibunko/nehan) plugin for displaying mathematical expression using katex",
 
+![demo](sshot.png)
 
 ## create nehan style
 
